@@ -9,7 +9,7 @@ drop database db_FD;
 
 --ALL TABLES
 
---publisher
+--START publisher
 
 create table tbl_Publisher(
 	publisher_Name varchar(111) primary key not null,
@@ -53,7 +53,7 @@ insert into tbl_Publisher
 
 --end Publisher
 
---Book
+--START Book
 
 create table tbl_Book (
 	book_BookID int primary key not null IDENTITY (100,1),
@@ -113,7 +113,7 @@ insert into tbl_Book
 
 --end Book
 
---BookAuthors
+--START BookAuthors
 
 create table tbl_BookAuthors(
 	ba_BookID int not null 
@@ -172,7 +172,7 @@ insert into tbl_BookAuthors
 
 --end BookAuthors
 
---LibraryBranch
+--START LibraryBranch
 
 create table tbl_LibraryBranch(
 	LB_BranchID int primary key not null identity(1,1),
@@ -192,7 +192,7 @@ insert into tbl_LibraryBranch
 
 --end LibraryBranch
 
---Borrower 
+--START Borrower 
 
 create table tbl_Borrower(
 	borrower_CardNo int primary key not null identity(1000,1),
@@ -217,7 +217,7 @@ insert into tbl_Borrower
 
 --end Borrower
 
---BookLoans DO THIS
+--START BookLoans 
 
 create table tbl_BookLoans(
 	BL_BookID int not null
@@ -294,7 +294,7 @@ insert into tbl_BookLoans
 
 --end BookLoans
 
---BookCopies
+--START BookCopies
 
 create table tbl_BookCopies(
 	BC_BookID int not null 	
@@ -440,6 +440,5 @@ by each library branch?
 		WHERE BA_AuthorName='Stephen King' and LB_BranchName='Central'
 	;
 
-	SELECT * FROM tbl_BookLoans
 
 END
